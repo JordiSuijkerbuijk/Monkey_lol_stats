@@ -1,0 +1,9 @@
+{
+    "name": "Monkey lol stats BE",
+    "description": "",
+    "version": "1.0.0",
+    "main": "./app/server.js",
+    "bin": "./app/server.js",
+    "dependencies": {
+    }
+}
