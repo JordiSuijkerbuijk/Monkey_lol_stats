@@ -2,9 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .text-thin {
+    font-variation-settings: "wght" 100;
+  }
+  .text-extralight {
+    font-variation-settings: "wght" 200;
+  }
+  .text-light {
+    font-variation-settings: "wght" 300;
+  }
+  .text-normal {
+    font-variation-settings: "wght" 400;
+  }
+  .text-medium {
+    font-variation-settings: "wght" 500;
+  }
+  .text-semibold {
+    font-variation-settings: "wght" 600;
+  }
+  .text-bold {
+    font-variation-settings: "wght" 700;
+  }
+  .text-extrabold {
+    font-variation-settings: "wght" 800;
+  }
+}
+
 :root {
   --background: #010a14;
-  --primary: #f0e6d2;
+  --primary: #ffffff;
   --secondary: #7d83ff;
 }
 

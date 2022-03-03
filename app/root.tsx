@@ -8,6 +8,8 @@ import {
 } from "remix";
 import type { MetaFunction } from "remix";
 
+import Navbar from "./components/navbar/navbar";
+
 import styles from "./styles/app.css";
 
 export const meta: MetaFunction = () => {
@@ -26,6 +28,7 @@ export default function App() {
         <Links />
       </head>
       <body>
+        <Navbar />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
