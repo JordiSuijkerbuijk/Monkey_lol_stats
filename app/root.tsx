@@ -8,7 +8,7 @@ import {
 } from "remix";
 import type { MetaFunction } from "remix";
 
-import styles from "../globals.css";
+import styles from "./styles/app.css";
 
 export const meta: MetaFunction = () => {
   return { title: "Monkey LoL stats 🐒" };
