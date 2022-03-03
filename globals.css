@@ -1,0 +1,40 @@
+:root {
+  --background: #010a14;
+  --primary: #f0e6d2;
+  --secondary: #7d83ff;
+}
+
+@font-face {
+  font-family: "Inter var";
+  src: url(/fonts/Inter/Inter.var.woff2) format("woff2");
+}
+
+html {
+  min-height: 100vh;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background-color: var(--background);
+  width: 100%;
+  font-family: "Inter var", sans-serif;
+  font-feature-settings: "tnum", "zero", "ss01", "ss03", "cv05", "cv06", "cv11";
+  font-variation-settings: "wght" 300;
+  font-style: normal;
+  color: var(--primary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}

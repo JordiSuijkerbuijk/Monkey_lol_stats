@@ -1,1 +1,4 @@
-# Monkey_lol_stats
+# Monkey LoL stuff
+
+This is the front-end for the hackaton project of the DPDK Bonobo's 🐒.
+We can use this as a way to flame each other on our garbage performance, so we had better step up our game once this app is complete :)
