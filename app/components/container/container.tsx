@@ -1,6 +1,19 @@
-export default function Container({ children }: { children: React.ReactNode }) {
+import clsx from "clsx";
+
+export default function Container({
+  children,
+  containerClass,
+}: {
+  children: React.ReactNode;
+  containerClass?: string;
+}) {
   return (
-    <div className="px-4 mx-auto max-w-[500px] md:max-w-[750px] lg:max-w-[1200px] xl:max-w-[1400px]">
+    <div
+      className={clsx([
+        "px-4 mx-auto max-w-[500px] md:max-w-[750px] lg:max-w-[1200px] xl:max-w-[1400px]",
+        containerClass,
+      ])}
+    >
       {children}
     </div>
   );
