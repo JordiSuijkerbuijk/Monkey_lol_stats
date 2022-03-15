@@ -1,11 +1,16 @@
 module.exports = {
   content: ["./app/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    fontFamily: {
+      'bebas': ['Bebas Neue']
+    },
     colors: {
-      background: "#010A14",
+      background: "#131416",
       primary: "#ffffff",
-      secondary: "#a855f7",
-      tertiary: "#F86624",
+      secondary: "#F86624",
+      tertiary: "#d8d8d8",
+      black: "#000000"
+      
     },
     extend: {
       gridTemplateColumns: {

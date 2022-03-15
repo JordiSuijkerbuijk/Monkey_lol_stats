@@ -1,29 +1,37 @@
-import { Link } from "remix";
-import Container from "../container/container";
+import { Link } from 'remix';
+import Container from '../container/container';
 
 export default function Navbar() {
   return (
     <>
-      <div className="relative w-full h-[52px]"></div>
-      <nav className="fixed top-0 w-full">
+      <div className='relative w-full h-[60px]'></div>
+      <nav className='flex bg-background fixed top-0 w-full'>
+        <span className='absolute text-3xl h-[60px] flex items-center ml-2'>
+          <Link to='/' className=''>
+            🐒
+          </Link>
+        </span>
         <Container>
-          <div className="relative flex justify-between items-start py-2 after:border-b-2 after:border-primary/50 after:inline-block after:w-9/12 after:h-px after:absolute after:bottom-0 after:left-1/2 after:-translate-x-2/4">
+          <div className='flex space-x-4 justify-center items-center py-2 h-[60px]'>
             <Link
-              to="/clash"
-              className="relative text-medium overflow-hidden after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-primary/75 after:transition-all after:-translate-x-full hover:after:translate-x-0 hover:after:opacity-100"
+              to='/clash'
+              className='flex text-medium text-tertiary font-bebas tracking-wider overflow-hidden h-[20px]'
             >
               Clash
             </Link>
-            <span className="text-3xl">
-              <Link to="/" className="">
-                🐒
-              </Link>
-            </span>
+            <div className='h-[14px] w-[1px] bg-primary' />
             <Link
-              to="/stats"
-              className="relative text-medium overflow-hidden after:absolute after:opacity-0 after:bottom-0 after:left-0 after:w-full after:h-px after:bg-primary/75 after:transition-all after:-translate-x-full hover:after:translate-x-0 hover:after:opacity-100"
+              to='/stats'
+              className='flex text-medium text-tertiary font-bebas tracking-wider overflow-hidden h-[20px]'
             >
               Stats
+            </Link>
+            <div className='h-[14px] w-[1px] bg-primary' />
+            <Link
+              to='/champions'
+              className='flex text-medium text-tertiary font-bebas tracking-wider overflow-hidden h-[20px]'
+            >
+              Champions
             </Link>
           </div>
         </Container>
