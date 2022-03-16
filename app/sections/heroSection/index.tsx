@@ -30,21 +30,11 @@ export default function HeroSection() {
 
   return (
     <section>
-      <h1 className='bg-black text-center p-16 flex justify-center'>
-        <div className='flex flex-col justify-center md:w-6/12 uppercase text-8xl leading-20'>
+      <h1 className='bg-black text-center h-[400px] flex justify-center font-bebas'>
+        <div className='flex flex-col justify-center md:w-6/12 uppercase text-9xl leading-20'>
           <span className='text-secondary whitespace-nowrap mb-4'>🔥flame🔥</span> the boys
         </div>
       </h1>
-      {/* <Container>
-        <div className='grid gap-12 justify-items-center'>
-          <p className='italic'>Using stats such as</p>
-          <ul className='grid grid-cols-2 md:grid-cols-3 gap-6'>
-            {possibleStats.map((stat) => (
-              <StatCard iconType={stat.iconType} statName={stat.statName} key={stat.statName} />
-            ))}
-          </ul>
-        </div>
-      </Container> */}
     </section>
   );
 }

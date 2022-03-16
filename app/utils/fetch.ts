@@ -22,9 +22,14 @@ export default (url: string, body: object | boolean = false, auth: string | bool
 
     fetch(url, params)
       .then((res) => res.json())
-      .then((data) => resolve(data))
+      .then((data) => {
+        if (!data.error) {
+          resolve(data);
+        }
+
+        resolve(false);
+      })
       .catch((e) => {
-        console.log(e);
         resolve(false);
       });
   });

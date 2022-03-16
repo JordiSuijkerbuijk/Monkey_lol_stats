@@ -18,8 +18,6 @@ export default function Featured() {
 
   const featuredChampions = (data.data as Array<Champion>) || false;
 
-  console.log('data', featuredChampions);
-
   return (
     <main className='grid gap-12'>
       {featuredChampions &&
