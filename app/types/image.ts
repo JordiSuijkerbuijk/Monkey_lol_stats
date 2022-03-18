@@ -4,4 +4,5 @@ export type Image = {
   width?: number;
   height?: number;
   loadingType: "lazy" | "eager";
+  imageClass?: string;
 };

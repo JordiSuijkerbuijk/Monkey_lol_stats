@@ -1,6 +1,13 @@
 import type { Image } from "../../types/image";
 
-export default function Image({ src, alt, width, height, loadingType }: Image) {
+export default function Image({
+  src,
+  alt,
+  width,
+  height,
+  loadingType,
+  imageClass,
+}: Image) {
   return (
     <picture>
       <source srcSet={`/images/${src}.webp`} type="image/webp"></source>
@@ -10,6 +17,7 @@ export default function Image({ src, alt, width, height, loadingType }: Image) {
         loading={loadingType ? loadingType : "lazy"}
         width={width}
         height={height}
+        className={imageClass}
       ></img>
     </picture>
   );
