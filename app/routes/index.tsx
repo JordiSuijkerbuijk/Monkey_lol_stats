@@ -1,9 +1,5 @@
-import { useEffect } from "react";
-
 import HeroSection from "../sections/heroSection/index";
 import TextImageSection from "../sections/textImageSection/index";
-
-import { transitionIn } from "../utils/transitions";
 
 const firstTextImageSection = {
   title: "Well-informed flaming sessions",
@@ -39,9 +35,6 @@ const secondTextImageSection = {
 };
 
 export default function Index() {
-  useEffect(() => {
-    transitionIn();
-  }, []);
   return (
     <main className="grid gap-12">
       <HeroSection />

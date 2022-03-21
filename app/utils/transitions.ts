@@ -1,21 +1,38 @@
 import anime from "animejs";
 
+export const transitionTimingIn = 200;
+export const transitionTimingOut = 200;
+
 export function transitionOut() {
-  anime({
-    targets: "body",
+  const tl = anime.timeline()
+
+  tl.add({
+    targets: "#content",
     opacity: 0,
-    duration: 200,
-    scale: [1, 0.95],
+    duration: transitionTimingOut,
+    scale: [1, 0.90],
     easing: "linear",
   });
+  tl.add({
+    targets: '#loader-container',
+    opacity: 1,
+    duration: 0
+  })
 }
 
 export function transitionIn() {
-  anime({
-    targets: "body",
+  const tl = anime.timeline();
+  
+  tl.add({
+    targets: '#loader-container',
+    opacity: 0,
+    duration: 0,
+  })
+  tl.add({
+    targets: "#content",
     opacity: 1,
-    duration: 200,
-    scale: [0.95, 1],
+    duration: transitionTimingIn,
+    scale: [0.90, 1],
     easing: "linear",
   });
 }

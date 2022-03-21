@@ -11,7 +11,7 @@ export default function CTA({ text, link, openInNewTab }: CTAType) {
     return (
       <a
         href={link}
-        rel='noopener norefferer'
+        rel='noopener noreferrer'
         target='_blank'
         className='relative inline-flex align-items-center gap-4 text-secondary text-lg text-medium overflow-hidden group 
         before:absolute before:h-2/4 before:w-0.5 before:-bottom-1/4 before:right-0 before:bg-secondary before:transition-transform before:translate-y-0
