@@ -1,6 +1,7 @@
 import { useLoaderData, LoaderFunction } from 'remix';
 
 import Container from '../../components/container/container';
+import ClassFilterheader from '../../components/classFilterHeader/classFilterheader'
 import ChampionAvatar from '~/components/championAvatar/championAvatar';
 
 import fetch from '../../utils/fetch';
@@ -22,14 +23,15 @@ export default function Index() {
   const champions = (data.data as Array<Champion>) || false;
 
   return (
-    <Container containerClass='grid gap-5 items-start grid-cols-3 md:grid-cols-5 py-10'>
-      {champions &&
-        champions.map((item: Champion) => {
-          return (
-          <ChampionAvatar {...item} key={item.key}/>
-        )})}
+    <Container>
+      <ClassFilterheader />
+      <div className="grid items-start grid-cols-3 gap-5 py-10 md:grid-cols-5">
+        {champions &&
+          champions.map((item: Champion) => {
+            return (
+            <ChampionAvatar {...item} key={item.key}/>
+          )})}
+      </div>
     </Container>
   );
 }
-
-//

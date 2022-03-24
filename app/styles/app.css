@@ -585,6 +585,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 80px;
 }
 
+.h-6 {
+  height: 1.5rem;
+}
+
 .w-4 {
   width: 1rem;
 }
@@ -611,6 +615,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-\[80px\] {
   width: 80px;
+}
+
+.w-6 {
+  width: 1.5rem;
+}
+
+.w-12 {
+  width: 3rem;
+}
+
+.w-9 {
+  width: 2.25rem;
 }
 
 .max-w-\[500px\] {
@@ -673,8 +689,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.grid-cols-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.grid-cols-6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
 .flex-col {
   flex-direction: column;
+}
+
+.content-center {
+  align-content: center;
 }
 
 .items-start {
@@ -699,6 +727,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .justify-items-start {
   justify-items: start;
+}
+
+.justify-items-center {
+  justify-items: center;
 }
 
 .gap-12 {
@@ -934,6 +966,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .opacity-50 {
   opacity: 0.5;
+}
+
+.opacity-80 {
+  opacity: 0.8;
 }
 
 .transition {
@@ -1240,6 +1276,14 @@ a {
 
 .hover\:bg-primary\/20:hover {
   background-color: rgb(255 255 255 / 0.2);
+}
+
+.hover\:fill-secondary:hover {
+  fill: #F86624;
+}
+
+.hover\:opacity-100:hover {
+  opacity: 1;
 }
 
 .hover\:before\:-translate-y-1\/4:hover::before {

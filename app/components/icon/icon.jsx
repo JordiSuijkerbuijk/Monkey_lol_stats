@@ -4,6 +4,12 @@ import Skull from "./types/skull";
 import Handshake from "./types/handshake";
 import Eye from "./types/eye";
 import Ellipsis from "./types/ellipsis";
+import MageIcon from "./types/mageIcon"
+import AssasinIcon from "./types/assasinIcon";
+import FighterIcon from "./types/fighterIcon";
+import MarksmanIcon from "./types/marksmanIcon"
+import TankIcon from "./types/tankIcon";
+import SupportIcon from './types/supportIcon'
 
 const iconTypes = {
   crown: Crown,
@@ -12,6 +18,12 @@ const iconTypes = {
   handshake: Handshake,
   eye: Eye,
   ellipsis: Ellipsis,
+  mage: MageIcon,
+  assasin: AssasinIcon,
+  fighter: FighterIcon,
+  marksman: MarksmanIcon,
+  tank: TankIcon,
+  support: SupportIcon
 };
 
 export default function Icon({ type = null, ...rest }) {
