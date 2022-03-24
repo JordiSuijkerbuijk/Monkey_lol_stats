@@ -1,6 +1,7 @@
 import { useLoaderData, LoaderFunction, useCatch } from 'remix';
-
 import type { ThrownResponse } from 'remix';
+
+import ChampionDetailHeaderSection from '../../sections/headers/championDetail'
 
 import fetch from '../../utils/fetch';
 
@@ -43,17 +44,7 @@ export default function ChampionDetail() {
 
   return (
     <section>
-      {/* Create section for this hero */}
-      <h1
-        className='bg-black text-center p-12 h-[400px] bg-cover bg-center flex justify-center'
-        style={{
-          backgroundImage: `url('http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion.id}_0.jpg')`,
-        }}
-      >
-        <div className='flex flex-col justify-center md:w-6/12 font-bebas text-8xl'>
-          {champion.name}
-        </div>
-      </h1>
+      <ChampionDetailHeaderSection {...champion}/>
     </section>
   );
 }

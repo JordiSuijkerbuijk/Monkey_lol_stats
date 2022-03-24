@@ -8,6 +8,7 @@ const firstTextImageSection = {
   inverted: true,
   image: {
     src: "rankedBanner",
+    isStatic: true,
     alt: "Riven fighting Shyvana",
     width: 1920,
     height: 1080,
@@ -27,6 +28,7 @@ const secondTextImageSection = {
   inverted: false,
   image: {
     src: "sktchampionsplash",
+    isStatic: true,
     alt: "Team of champions ready for battle",
     width: 1215,
     height: 717,

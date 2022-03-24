@@ -32,7 +32,7 @@ export default function HeroSection() {
   return (
     <section className="relative overflow-hidden">
       <h1 className="text-center h-[250px] md:h-[400px] flex justify-center font-bebas">
-        <div className="flex flex-col justify-center md:w-9/12 uppercase text-7xl md:text-9xl leading-20">
+        <div className="flex flex-col justify-center md:w-9/12 uppercase leading-20">
           <span className="text-secondary whitespace-nowrap mb-4">
             🔥flame🔥
           </span>{" "}
@@ -43,6 +43,7 @@ export default function HeroSection() {
         <span className="absolute w-full h-full top-0 bg-black opacity-60"></span>
         <Image
           imageClass="w-full h-full object-cover"
+          isStatic
           src={"infernalVelkoz"}
           alt=""
           width={1215}
