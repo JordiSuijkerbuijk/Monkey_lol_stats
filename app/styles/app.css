@@ -638,6 +638,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.scale-110 {
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 @-webkit-keyframes loader {
   0%, 80%, 100% {
     transform: scale(0);
@@ -792,6 +798,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   fill: #ffffff;
 }
 
+.fill-secondary {
+  fill: #FFA62B;
+}
+
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -938,6 +948,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   opacity: 0.8;
 }
 
+.opacity-100 {
+  opacity: 1;
+}
+
 .transition {
   transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -988,6 +1002,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .text-medium {
   font-variation-settings: "wght" 500;
+}
+
+.\[stroke-dashoffset\:0\] {
+  stroke-dashoffset: 0;
 }
 
 :root {

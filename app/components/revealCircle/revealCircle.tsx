@@ -1,8 +1,11 @@
+import clsx from "clsx";
+
 type Props = {
   circleClass?: string;
+  isActive: boolean;
 };
 
-export default function RevealCircle({ circleClass }: Props) {
+export default function RevealCircle({ circleClass, isActive }: Props) {
   return (
     <svg viewBox="-2 -2 104 104" className={`${circleClass} group `}>
       <circle
@@ -15,7 +18,10 @@ export default function RevealCircle({ circleClass }: Props) {
         strokeDasharray="1 1"
         strokeDashoffset="1"
         pathLength="1"
-        className="transition-all duration-300 group-hover:[stroke-dashoffset:0]"
+        className={clsx([
+          "transition-all duration-300 group-hover:[stroke-dashoffset:0]",
+          isActive && "[stroke-dashoffset:0]",
+        ])}
       ></circle>
     </svg>
   );
