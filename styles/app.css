@@ -4,46 +4,47 @@
 
 @layer utilities {
   .text-thin {
-    font-variation-settings: 'wght' 100;
+    font-variation-settings: "wght" 100;
   }
   .text-extralight {
-    font-variation-settings: 'wght' 200;
+    font-variation-settings: "wght" 200;
   }
   .text-light {
-    font-variation-settings: 'wght' 300;
+    font-variation-settings: "wght" 300;
   }
   .text-normal {
-    font-variation-settings: 'wght' 400;
+    font-variation-settings: "wght" 400;
   }
   .text-medium {
-    font-variation-settings: 'wght' 500;
+    font-variation-settings: "wght" 500;
   }
   .text-semibold {
-    font-variation-settings: 'wght' 600;
+    font-variation-settings: "wght" 600;
   }
   .text-bold {
-    font-variation-settings: 'wght' 700;
+    font-variation-settings: "wght" 700;
   }
   .text-extrabold {
-    font-variation-settings: 'wght' 800;
+    font-variation-settings: "wght" 800;
   }
 }
 
 :root {
   --background: #131416;
   --primary: #ffffff;
-  --secondary: #7d83ff;
+  --secondary: #ffa62b;
   --tertiary: #d8d8d8;
+  --fire: #f86624;
 }
 
 @font-face {
-  font-family: 'Inter var';
-  src: url(/fonts/Inter/Inter.var.woff2) format('woff2');
+  font-family: "Inter var";
+  src: url(/fonts/Inter/Inter.var.woff2) format("woff2");
 }
 
 @font-face {
-  font-family: 'Bebas Neue';
-  src: url(/fonts/Bebasneue/BebasNeue-Regular.woff2) format('woff2');
+  font-family: "Bebas Neue";
+  src: url(/fonts/Bebasneue/BebasNeue-Regular.woff2) format("woff2");
 }
 
 html {
@@ -59,28 +60,28 @@ body {
 }
 
 .bebasFont {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: "Bebas Neue", sans-serif;
 }
 
 body {
   background-color: var(--background);
   width: 100%;
-  font-family: 'Inter var', sans-serif;
-  font-feature-settings: 'tnum', 'zero', 'ss01', 'ss03', 'cv05', 'cv06', 'cv11';
-  font-variation-settings: 'wght' 300;
+  font-family: "Inter var", sans-serif;
+  font-feature-settings: "tnum", "zero", "ss01", "ss03", "cv05", "cv06", "cv11";
+  font-variation-settings: "wght" 300;
   font-style: normal;
   color: var(--primary);
 }
 
 h1 {
   font-size: 4.5rem;
-  font-variation-settings: 'wght' 600;
+  font-variation-settings: "wght" 600;
   line-height: 1;
 }
 
 h2 {
   font-size: 2.4rem;
-  font-variation-settings: 'wght' 600;
+  font-variation-settings: "wght" 600;
   line-height: 1;
 }
 

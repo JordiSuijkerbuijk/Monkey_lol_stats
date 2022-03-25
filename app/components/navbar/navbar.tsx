@@ -13,27 +13,27 @@ export default function Navbar() {
         </span>
         <Container>
           <div className="flex space-x-4 justify-center items-center py-2 h-[60px]">
-            <TransitionOutLink 
+            <TransitionOutLink
               to="/clash"
-              className="flex text-medium text-tertiary font-bebas tracking-wider overflow-hidden h-[20px]"
+              className="flex text-medium text-primary opacity-80 font-bebas tracking-wider overflow-hidden h-[20px]"
               prefetch="intent"
             >
               Clash
             </TransitionOutLink>
             <div className="h-[14px] w-[1px] bg-primary" />
-              <TransitionOutLink
-                to="/champions"
-                className="flex text-medium text-tertiary font-bebas tracking-wider overflow-hidden h-[20px]"
-              >
-                Champions
-              </TransitionOutLink>
+            <TransitionOutLink
+              to="/champions"
+              className="flex text-medium text-primary opacity-80 font-bebas tracking-wider overflow-hidden h-[20px]"
+            >
+              Champions
+            </TransitionOutLink>
             <div className="h-[14px] w-[1px] bg-primary" />
-              <TransitionOutLink
-                to="/stats"
-                className="flex text-medium text-tertiary font-bebas tracking-wider overflow-hidden h-[20px]"
-              >
-                Stats
-              </TransitionOutLink>
+            <TransitionOutLink
+              to="/stats"
+              className="flex text-medium text-primary opacity-80 font-bebas tracking-wider overflow-hidden h-[20px]"
+            >
+              Stats
+            </TransitionOutLink>
           </div>
         </Container>
       </nav>

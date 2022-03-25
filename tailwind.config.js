@@ -2,14 +2,15 @@ module.exports = {
   content: ["./app/**/*.{js,ts,jsx,tsx}"],
   theme: {
     fontFamily: {
-      'bebas': ['Bebas Neue']
+      bebas: ["Bebas Neue"],
     },
     colors: {
       background: "#131416",
       primary: "#ffffff",
-      secondary: "#F86624",
+      secondary: "#FFA62B",
       tertiary: "#d8d8d8",
-      black: "#000000"
+      black: "#000000",
+      fire: "#F86624",
     },
     animationDelay: {
       100: "100ms",
@@ -19,7 +20,8 @@ module.exports = {
     },
     extend: {
       animation: {
-        loader: 'loader 1.4s ease-in-out infinite both'
+        loader: "loader 1.4s ease-in-out infinite both",
+        strokeDash: "strokeDash 1.4s linear forward",
       },
       gridTemplateColumns: {
         "1/1": "repeat(2, 1fr)",
@@ -27,17 +29,23 @@ module.exports = {
       },
       keyframes: {
         loader: {
-          '0%, 80%, 100%': {
-            transform: 'scale(0)',
+          "0%, 80%, 100%": {
+            transform: "scale(0)",
           },
-          '40%': {
-            transform: 'scale(1)',
-          }
-        }
-      }
+          "40%": {
+            transform: "scale(1)",
+          },
+        },
+        strokeDash: {
+          from: {
+            "stroke-dashoffset": "1",
+          },
+          to: {
+            "stroke-dashoffset": "0",
+          },
+        },
+      },
     },
   },
-  plugins : [
-    require("tailwindcss-animation-delay")
-  ],
+  plugins: [require("tailwindcss-animation-delay")],
 };
