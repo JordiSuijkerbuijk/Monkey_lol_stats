@@ -15,7 +15,7 @@ export default function Navbar() {
           <div className="flex space-x-4 justify-center items-center py-2 h-[60px]">
             <TransitionOutLink
               to="/clash"
-              className="flex text-medium text-primary opacity-80 font-bebas tracking-wider overflow-hidden h-[20px]"
+              className="relative flex text-medium text-primary transition-color opacity-80 font-bebas tracking-wider overflow-hidden h-[20px] hover:text-secondary after:bottom-0 after:left-0 after:-scale-x-0 after:h-0.5 after:w-full after:absolute transition-transform hover:after:scale-x-100 after:bg-secondary after:transition-transform after:origin-left"
               prefetch="intent"
             >
               Clash
@@ -23,14 +23,14 @@ export default function Navbar() {
             <div className="h-[14px] w-[1px] bg-primary" />
             <TransitionOutLink
               to="/champions"
-              className="flex text-medium text-primary opacity-80 font-bebas tracking-wider overflow-hidden h-[20px]"
+              className="relative flex text-medium text-primary transition-color opacity-80 font-bebas tracking-wider overflow-hidden h-[20px] hover:text-secondary after:bottom-0 after:left-0 after:-scale-x-0 after:h-0.5 after:w-full after:absolute transition-transform hover:after:scale-x-100 after:bg-secondary after:transition-transform after:origin-left"
             >
               Champions
             </TransitionOutLink>
             <div className="h-[14px] w-[1px] bg-primary" />
             <TransitionOutLink
               to="/stats"
-              className="flex text-medium text-primary opacity-80 font-bebas tracking-wider overflow-hidden h-[20px]"
+              className="relative flex text-medium text-primary transition-color opacity-80 font-bebas tracking-wider overflow-hidden h-[20px] hover:text-secondary after:bottom-0 after:left-0 after:-scale-x-0 after:h-0.5 after:w-full after:absolute transition-transform hover:after:scale-x-100 after:bg-secondary after:transition-transform after:origin-left"
             >
               Stats
             </TransitionOutLink>
