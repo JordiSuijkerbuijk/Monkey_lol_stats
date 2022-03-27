@@ -19,6 +19,9 @@ module.exports = {
       400: "400ms",
     },
     extend: {
+      scale: {
+        '115': '1.15',
+      },
       animation: {
         loader: "loader 1.4s ease-in-out infinite both",
         strokeDash: "strokeDash 1.4s linear forward",
