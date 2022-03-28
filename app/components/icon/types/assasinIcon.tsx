@@ -1,4 +1,6 @@
-export default function AssasinIcon(props) {
+import type { IconProps } from '../../../types/icon'
+
+export default function AssasinIcon(props: IconProps) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" {...props}> 
       <path d="m56.59 73.71 1.67-2.88c5.75-9.34 5.51-16 3.83-20.59a39.78 39.78 0 0 1-9.1 16 2 2 0 0 1-1.43.48H48.2a2.17 2.17 0 0 1-1.67-.72 39.78 39.78 0 0 1-9.1-16c-1.68 4.55-1.68 11.26 3.83 20.59l1.68 2.88-3.36 5.75 10.06 17.72L59.7 79.22z"/>

@@ -1,4 +1,6 @@
-export default function MageIcon(props){
+import type { IconProps } from '../../../types/icon'
+
+export default function MageIcon(props: IconProps){
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" {...props}>
       <path d="M84.48 77.3h13.41l-3.83-12.93h-9.58a36.73 36.73 0 0 0-27.54 12.45L50 85l-6.94-8.14a36.73 36.73 0 0 0-27.54-12.49H5.94L2.11 77.3h13.41a36.73 36.73 0 0 1 27.54 12.45l.71.72h-9.1v7.42h30.9v-7.42h-9.1l.71-.72a35.85 35.85 0 0 1 27.3-12.45"/>

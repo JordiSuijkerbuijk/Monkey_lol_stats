@@ -26,8 +26,13 @@ const iconTypes = {
   support: SupportIcon
 };
 
-export default function Icon({ type = null, ...rest }) {
+type IconProps = {
+  type: keyof typeof iconTypes,
+  className?: string
+}
+
+export default function Icon({ type, ...rest }: IconProps) {
   const IconComp = iconTypes[type];
-  if (!type || type === "" || IconComp === undefined) return null;
+  if (!type || IconComp === undefined) return null;
   return <IconComp {...rest} />;
 }

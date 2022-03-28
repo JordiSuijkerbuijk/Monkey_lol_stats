@@ -1,4 +1,6 @@
-export default function TankIcon(props) {
+import type { IconProps } from '../../../types/icon'
+
+export default function TankIcon(props: IconProps) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" {...props}>
       <path d="M85.92 63.89 55 90V67.48h7.42v-9.1H37.55v9.1H45v22.75L14.08 63.89 8.33 21l27.54-10.51a39.13 39.13 0 0 1 28.26 0L91.67 21zM66.28 5a47.61 47.61 0 0 0-32.56 0L2.11 17.19l6.7 49.57L41.86 95A13 13 0 0 0 50 97.89 12.5 12.5 0 0 0 58.14 95l33.05-28.24 6.7-49.57z"/>
