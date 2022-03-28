@@ -35,7 +35,7 @@ const ClassIcon = ({ name, isActiveClass, filterCallback }: classIconProps) => {
       <Icon
         type={name}
         className={clsx([
-          "transition-colors transition-transform duration-300 scale-100 fill-primary group-hover:fill-secondary group-hover:scale-110",
+          "transition duration-300 scale-100 fill-primary group-hover:fill-secondary group-hover:scale-110",
           isActiveClass && "fill-secondary scale-110",
         ])}
       />
@@ -43,7 +43,7 @@ const ClassIcon = ({ name, isActiveClass, filterCallback }: classIconProps) => {
   );
 };
 
-export default function classFilterFunction() {
+export default function ClassFilterFunction() {
   const [filteredClass, setFilteredClass] = useState("");
 
   function changeFilterType(championClass: string) {
