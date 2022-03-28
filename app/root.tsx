@@ -5,7 +5,8 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-  useTransition
+  useTransition,
+  useSearchParams
 } from "remix";
 import { useEffect, useRef } from 'react';
 import type { MetaFunction } from "remix";
@@ -26,10 +27,14 @@ export const links = () => [{ rel: "stylesheet", href: styles }];
 export default function App() {
   const transition = useTransition();
   const isLoading = useRef(false)
+  const [searchParams] = useSearchParams();
 
   useEffect(() => {
-    //Check if the ref shows that the previous transition was a normal navigation load. If it was, we want to transition the page in. 
-    if(isLoading.current) {
+    // Check if the ref shows that the previous transition was a normal navigation load. If it was, we want to transition the page in. 
+    // We want to prevent the transition from happening when we only change the query paramers. For now we will just check if there are any query parameters and don't transition if we have them.
+    // In the future, an exception may be made for a searchTerm. As well as a beter solution may be implemented so that we have a more robust solution.
+    const currentQueryParams = searchParams.toString();
+    if(isLoading.current && currentQueryParams === "") {
       transitionIn();
     }
 
