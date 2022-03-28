@@ -11,7 +11,7 @@ import MarksmanIcon from "./types/marksmanIcon"
 import TankIcon from "./types/tankIcon";
 import SupportIcon from './types/supportIcon'
 
-const iconTypes = {
+export const iconTypes = {
   crown: Crown,
   coins: Coins,
   skull: Skull,
@@ -19,7 +19,7 @@ const iconTypes = {
   eye: Eye,
   ellipsis: Ellipsis,
   mage: MageIcon,
-  assasin: AssasinIcon,
+  assassin: AssasinIcon,
   fighter: FighterIcon,
   marksman: MarksmanIcon,
   tank: TankIcon,

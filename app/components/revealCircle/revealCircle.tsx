@@ -6,6 +6,7 @@ type Props = {
 };
 
 export default function RevealCircle({ circleClass, isActive }: Props) {
+  // This is a circle that can be absolutely positioned behind anything and will 'appear' when it is hovered.
   return (
     <svg viewBox="-2 -2 104 104" className={`${circleClass} group `}>
       <circle
