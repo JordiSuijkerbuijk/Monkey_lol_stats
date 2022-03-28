@@ -1,4 +1,9 @@
 import { useLoaderData, LoaderFunction } from 'remix';
+
+import Container from '../../components/container/container';
+import ClassFilterheader from '../../components/classFilterHeader/classFilterheader';
+import ChampionAvatar from '~/components/championAvatar/championAvatar';
+
 import fetch from '../../utils/fetch';
 
 import type { Champion } from '../../types/champion';
@@ -8,8 +13,7 @@ type LoaderData = {
 };
 
 export const loader: LoaderFunction = async () => {
-  const data = await fetch('http://localhost:3000/champion/rotation');
-
+  const data = await fetch('http://localhost:3000/champions/rotation');
   return data;
 };
 
@@ -19,10 +23,15 @@ export default function Featured() {
   const featuredChampions = (data.data as Array<Champion>) || false;
 
   return (
-    <main className='grid gap-12'>
-      {featuredChampions &&
-        featuredChampions.map((item: Champion) => <div key={item.key}> {item.id}</div>)}
-    </main>
+    <Container>
+      <ClassFilterheader />
+      <div className='grid items-start grid-cols-3 gap-5 py-10 md:grid-cols-5'>
+        {featuredChampions &&
+          featuredChampions.map((item: Champion) => {
+            return <ChampionAvatar {...item} key={item.key} />;
+          })}
+      </div>
+    </Container>
   );
 }
 
