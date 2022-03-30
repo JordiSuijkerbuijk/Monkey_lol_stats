@@ -4,6 +4,8 @@ import clsx from "clsx";
 import Icon, { iconTypes } from "../icon/icon.jsx";
 import RevealCircle from "../revealCircle/revealCircle";
 
+import capitalizeString from "~/utils/capitalizeString.js";
+
 const classes: (keyof typeof iconTypes)[] = [
   "assassin",
   "fighter",
@@ -23,7 +25,7 @@ const ClassIcon = ({ name, isActiveClass }: ClassIconProps) => {
   // That way, we can filter on the server. We also check if this class is currently active so we can remove the queryprops in that case (so we filter on nothing) 
   // The Riot API stores these types with a capital letter at the start, so we use that instead of the 'normal' name that we use for the rest of the component.
 
-  const capitalizedName = name.charAt(0).toUpperCase() + name.slice(1)
+  const capitalizedName = capitalizeString(name)
   return (
     <Link
       to={isActiveClass ? `` : `?championClass=${capitalizedName}`}
@@ -56,7 +58,7 @@ export default function ClassFilterFunction() {
       {Array.isArray(classes) &&
         classes.map((championClass) => {
           //The query params are capitalized, because Riot has it saved this way in their API, so we need to capitalize the championClass for comparison.
-          const capitalizedChampClass = championClass.charAt(0).toUpperCase() + championClass.slice(1) 
+          const capitalizedChampClass = capitalizeString(championClass)
           return <ClassIcon
             key={championClass}
             name={championClass}

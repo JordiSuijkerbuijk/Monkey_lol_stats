@@ -19,6 +19,9 @@ module.exports = {
       400: "400ms",
     },
     extend: {
+      translate: {
+        '2px': '2px'
+      },
       scale: {
         '115': '1.15',
       },

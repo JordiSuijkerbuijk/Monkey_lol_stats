@@ -1,14 +1,14 @@
-import { useLoaderData, LoaderFunction, useCatch } from 'remix';
-import type { ThrownResponse } from 'remix';
+import { useLoaderData, LoaderFunction, useCatch } from "remix";
+import type { ThrownResponse } from "remix";
 
-import ChampionDetailHeaderSection from '../../sections/headers/championDetail'
+import ChampionDetailHeaderSection from "../../sections/headers/championDetail";
 
-import fetch from '../../utils/fetch';
+import fetch from "../../utils/fetch";
 
-import type { Champion } from '../../types/champion';
+import type { ChampionDetail } from "../../types/champion";
 
 type LoaderData = {
-  data: Champion;
+  data: ChampionDetail;
 };
 
 type fetchError = {
@@ -21,20 +21,26 @@ export const loader: LoaderFunction = async ({ params }) => {
     return false;
   }
 
-  const data = await fetch(`http://localhost:3000/champions/${champion}`).catch((err) => {
-    console.log(err);
-    throw new Response('Not Found', {
-      status: 404,
-    });
-  });
+  const data = await fetch(`http://localhost:3000/champions/${champion}`).catch(
+    (err) => {
+      console.log(err);
+      throw new Response("Not Found", {
+        status: 404,
+      });
+    }
+  );
+
+  const championData = data.data[champion];
 
   if (!data) {
-    throw new Response('Not Found', {
+    throw new Response("Not Found", {
       status: 404,
     });
   }
 
-  return data;
+  return {
+    data: championData,
+  };
 };
 
 export default function ChampionDetailPage() {
@@ -58,8 +64,8 @@ export function CatchBoundary() {
     case 404:
       return (
         <section>
-          <h1 className='bg-black text-center p-12 h-[400px] bg-cover bg-center flex justify-center'>
-            <div className='flex flex-col justify-center md:w-6/12 font-bebas text-8xl'>
+          <h1 className="bg-black text-center p-12 h-[400px] bg-cover bg-center flex justify-center">
+            <div className="flex flex-col justify-center md:w-6/12 font-bebas text-8xl">
               404 <br /> Champion not found!
             </div>
           </h1>

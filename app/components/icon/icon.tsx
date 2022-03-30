@@ -10,6 +10,10 @@ import FighterIcon from "./types/fighterIcon";
 import MarksmanIcon from "./types/marksmanIcon"
 import TankIcon from "./types/tankIcon";
 import SupportIcon from './types/supportIcon'
+import Fist from './types/fist'
+import Wand from './types/wand'
+import Shield from './types/shield'
+import SchoolCap from "./types/schoolCap";
 
 export const iconTypes = {
   crown: Crown,
@@ -23,7 +27,11 @@ export const iconTypes = {
   fighter: FighterIcon,
   marksman: MarksmanIcon,
   tank: TankIcon,
-  support: SupportIcon
+  support: SupportIcon,
+  fist: Fist,
+  wand: Wand,
+  shield: Shield,
+  schoolcap: SchoolCap
 };
 
 type IconProps = {
