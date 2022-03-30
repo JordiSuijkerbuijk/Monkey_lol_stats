@@ -1,25 +1,53 @@
-import Image from '../../components/image/image'
-import type { Champion } from '../../types/champion'
+import Image from "../../components/image/image";
+import Container from "../../components/container/container";
+import Icon from '../../components/icon/icon';
+import type { ChampionDetail } from "../../types/champion";
 
-
-export default function ChampionDetailHeader(props: Champion){
+export default function ChampionDetailHeader(props: ChampionDetail) {
+  console.log(props)
   return (
-    <div
-      className="relative h-[250px] md:h-[400px] flex justify-center items-center"
-    >
-      <div className="relative flex h-full w-full justify-center">
-        <Image 
-          src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${props.id}_0.jpg`}
-          alt=""
-          isStatic={false}
-          width={undefined}
-          height={undefined}
-          loadingType="eager"
-          imageClass="h-full w-full object-top object-cover"
-        />
-        <span className="absolute w-full h-full top-0 left-0 bg-background opacity-60"></span>
+    <div>
+      <div className="relative flex justify-center w-full h-full py-12">
+        {/* We render the image twice, once as a blurred out background and one in 'normal' size */}
+        <div className="z-10 flex justify-center">
+          <Image
+            src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${props.id}_0.jpg`}
+            alt=""
+            isStatic={false}
+            width={undefined}
+            height={undefined}
+            loadingType="eager"
+            imageClass="object-cover w-9/12"
+          />
+          <span className="absolute top-0 left-0 w-full h-full bg-background opacity-20"></span>
+        </div>
+        <div className="absolute top-0 left-0 w-full h-full">
+          <Image
+            src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${props.id}_0.jpg`}
+            alt=""
+            isStatic={false}
+            width={undefined}
+            height={undefined}
+            loadingType="eager"
+            imageClass="w-full h-full object-cover blur-md"
+          />
+          <span className="absolute top-0 left-0 w-full h-full bg-background opacity-60"></span>
+        </div>
       </div>
-      <h1 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center font-bebas text-7xl md:text-9xl">{props.name}</h1>
+      <Container
+        containerClass="grid justify-items-center" 
+      >
+        <div className="text-center">
+          <h1 className="font-bebas text-7xl md:text-9xl">
+            {props.name}
+          </h1>
+          <span className="text-lg italic md:text-2xl">{props.title}</span>
+        </div>
+        <div>
+          {Array.isArray(props.tags && props.tags.map(championClass => <Icon type={championClass} key={championClass} />))}
+
+        </div>
+      </Container>
     </div>
-  )
+  );
 }

@@ -37,14 +37,15 @@ export const loader: LoaderFunction = async ({ params }) => {
   return data;
 };
 
-export default function ChampionDetail() {
-  const data = useLoaderData<LoaderData>();
+export default function ChampionDetailPage() {
+  const loaderData = useLoaderData<LoaderData>();
 
-  const champion = data.data as Champion;
-
+  //The champion data we need is under the champion name, which is nested inside a .data attribute ().
+  //example: http://ddragon.leagueoflegends.com/cdn/12.5.1/data/en_US/champion/Aatrox.json
+  const championData = loaderData.data;
   return (
     <section>
-      <ChampionDetailHeaderSection {...champion}/>
+      <ChampionDetailHeaderSection {...championData}/>
     </section>
   );
 }
