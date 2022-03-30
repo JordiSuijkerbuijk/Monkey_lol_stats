@@ -10,7 +10,7 @@ export default function ChampionDetailHeader(props: ChampionDetail) {
   console.log(props)
   return (
     <div>
-      <div className="relative flex justify-center w-full h-full py-12 overflow-hidden">
+      <div className="relative flex justify-center w-full h-full py-12 overflow-hidden -z-10">
         {/* We render the image twice, once as a blurred out background and one in 'normal' size */}
         <div className="z-10 flex justify-center">
           <Image
@@ -37,10 +37,10 @@ export default function ChampionDetailHeader(props: ChampionDetail) {
           <span className="absolute top-0 left-0 w-full h-full md:h-[calc(100%_+_12px)] bg-background opacity-60"></span>
         </div>
       </div>
-      <Container containerClass="grid">
-        <div className="relative grid gap-6 p-4 border-2 justify-self-center justify-items-center md:p-8 sm:grid-cols-3 border-secondary after:w-4 after:h-4 after:absolute after:top-0 after:right-0 after:bg-background after:translate-x-2px after:-translate-y-2px before:absolute before:w-4 before:h-4 before:bottom-0 before:left-0 before:bg-background before:-translate-x-2px before:translate-y-2px md:after:w-8 md:after:h-8 md:before:w-8 md:before:h-8">
+      <Container containerClass="grid -translate-y-20 lg:-translate-y-36">
+        <div className="relative grid gap-6 p-4 border-2 justify-self-center justify-items-center md:p-8 sm:grid-cols-2 border-secondary before:w-6 before:h-6 before:bg-background before:absolute before:-bottom-1 before:-left-1 before:-translate-x-1/2 before:translate-y-1/2 before:rotate-45 before:origin-right md:before:w-8 md:before:h-8 after:w-6 after:h-6 after:bg-background after:absolute after:-bottom-1 after:-right-1 after:rotate-45 after:origin-bottom md:after:w-8 md:after:h-8">
           <div className="text-center">
-            <h1 className="font-bebas text-7xl md:text-9xl">
+            <h1 className="font-bebas text-7xl lg:text-9xl">
               {props.name}
             </h1>
             <span className="text-lg italic md:text-2xl">{props.title}</span>
@@ -57,24 +57,6 @@ export default function ChampionDetailHeader(props: ChampionDetail) {
               </span>
 
             })}
-          </div>
-          <div className="grid items-center grid-cols-4 gap-4">
-            {props.info?.attack && <span className="w-6 text-center fill-primary" title="Attack">
-              <Icon type="fist" />
-              {props.info.attack}
-            </span>}
-            {props.info?.magic && <span className="w-6 text-center fill-primary" title="Magic">
-              <Icon type="wand" />
-              {props.info.magic}
-            </span>}
-            {props.info?.defense && <span className="w-6 text-center fill-primary" title="Defense">
-              <Icon type="shield" />
-              {props.info.defense}
-            </span>}
-            {props.info?.difficulty && <span className="w-6 text-center fill-primary" title="Difficulty">
-              <Icon type="schoolcap" />
-              {props.info.difficulty}
-            </span>}
           </div>
         </div>
       </Container>
