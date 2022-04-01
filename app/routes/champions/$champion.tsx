@@ -2,6 +2,7 @@ import { useLoaderData, LoaderFunction, useCatch } from "remix";
 import type { ThrownResponse } from "remix";
 
 import ChampionDetailHeaderSection from "../../sections/headers/championDetail";
+import ChampionIntroductionSection from "../../sections/championIntroductionSection/championIntroductionSection";
 
 import fetch from "../../utils/fetch";
 
@@ -52,6 +53,7 @@ export default function ChampionDetailPage() {
   return (
     <section>
       <ChampionDetailHeaderSection {...championData}/>
+      <ChampionIntroductionSection lore={championData.lore} champStats={championData.stats} champInfo={championData.info}/>
     </section>
   );
 }

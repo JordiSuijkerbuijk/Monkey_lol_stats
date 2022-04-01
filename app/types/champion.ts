@@ -34,7 +34,7 @@ export interface ChampionDetail {
   recommended: any[]; //Also seems unused by riot.
 }
 
-type ChampionStats = {
+export type ChampionStats = {
   hp: number;
   hpperlevel: number;
   mp: number;
@@ -67,7 +67,7 @@ type ChampionImage = {
   h: number;
 };
 
-type ChampionInfo = {
+export type ChampionInfo = {
   attack: number;
   defense: number;
   magic: number;

@@ -7,7 +7,6 @@ import unCapitalizeString from "~/utils/unCapitalizeString";
 import type { ChampionDetail } from "../../types/champion";
 
 export default function ChampionDetailHeader(props: ChampionDetail) {
-  console.log(props)
   return (
     <div>
       <div className="relative flex justify-center w-full h-full py-12 overflow-hidden -z-10">
