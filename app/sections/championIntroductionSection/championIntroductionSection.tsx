@@ -12,8 +12,11 @@ type ChampionIntroductionProps = {
 export default function ChampionIntroductionSection({lore, champStats, champInfo}: ChampionIntroductionProps){
   return (
     <section>
-      <Container containerClass="grid">
+      <Container containerClass="grid gap-4 items-center sm:grid-cols-2 md:gap-8">
         <ChampionStatsBox stats={champStats} info={champInfo}/>
+        <p>
+          {lore}
+        </p>
       </Container>
     </section>
   )
