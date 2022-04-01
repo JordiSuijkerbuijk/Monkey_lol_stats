@@ -1,11 +1,13 @@
+import { useSearchParams, Link } from "remix";
 import clsx from "clsx";
-import { useState } from "react";
 
-import Icon from "../icon/icon.jsx";
+import Icon, { iconTypes } from "../icon/icon.jsx";
 import RevealCircle from "../revealCircle/revealCircle";
 
-const classes: string[] = [
-  "assasin",
+import capitalizeString from "~/utils/capitalizeString.js";
+
+const classes: (keyof typeof iconTypes)[] = [
+  "assassin",
   "fighter",
   "mage",
   "marksman",
@@ -13,20 +15,24 @@ const classes: string[] = [
   "tank",
 ];
 
-type classIconProps = {
-  name: string;
+type ClassIconProps = {
+  name: keyof typeof iconTypes;
   isActiveClass: boolean;
-  filterCallback: Function;
 };
 
-const ClassIcon = ({ name, isActiveClass, filterCallback }: classIconProps) => {
+const ClassIcon = ({ name, isActiveClass }: ClassIconProps) => {
+  // We redirect with a query prop so that the loader of the page on which this filter header is present is run again.
+  // That way, we can filter on the server. We also check if this class is currently active so we can remove the queryprops in that case (so we filter on nothing) 
+  // The Riot API stores these types with a capital letter at the start, so we use that instead of the 'normal' name that we use for the rest of the component.
+
+  const capitalizedName = capitalizeString(name)
   return (
-    <button
+    <Link
+      to={isActiveClass ? `` : `?championClass=${capitalizedName}`}
       className={clsx([
         "relative w-16 p-4 transition-opacity group fill-primary opacity-60 hover:opacity-100",
         isActiveClass && "opacity-100",
       ])}
-      onClick={() => filterCallback(name)}
     >
       <RevealCircle
         circleClass="absolute top-0 left-0 w-full h-full"
@@ -39,32 +45,26 @@ const ClassIcon = ({ name, isActiveClass, filterCallback }: classIconProps) => {
           isActiveClass && "fill-secondary scale-110",
         ])}
       />
-    </button>
+    </Link>
   );
 };
 
 export default function ClassFilterFunction() {
-  const [filteredClass, setFilteredClass] = useState("");
-
-  function changeFilterType(championClass: string) {
-    if (filteredClass === championClass) {
-      setFilteredClass("");
-    } else {
-      setFilteredClass(championClass);
-    }
-  }
+  const [searchParams] = useSearchParams();
+  const activeClass = searchParams.get("championClass")
 
   return (
     <div className="grid content-center grid-cols-6 justify-items-center">
       {Array.isArray(classes) &&
-        classes.map((championClass) => (
-          <ClassIcon
+        classes.map((championClass) => {
+          //The query params are capitalized, because Riot has it saved this way in their API, so we need to capitalize the championClass for comparison.
+          const capitalizedChampClass = capitalizeString(championClass)
+          return <ClassIcon
             key={championClass}
             name={championClass}
-            isActiveClass={filteredClass === championClass}
-            filterCallback={changeFilterType}
+            isActiveClass={activeClass === capitalizedChampClass}
           />
-        ))}
+        })}
     </div>
   );
 }
