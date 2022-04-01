@@ -3,18 +3,9 @@ import type { ThrownResponse } from 'remix';
 
 import ChampionDetailHeaderSection from '../../sections/headers/championDetail';
 
-import fetch from '../../utils/fetch';
+import fetch from '../../utils/fetch/fetch';
 
 import type { ChampionDetail } from '../../types/champion';
-
-type LoaderData = {
-  data: ChampionDetail;
-};
-
-type FetchError = {
-  error: string;
-  status: number;
-};
 
 export const loader: LoaderFunction = async ({ params }) => {
   const champion = `${params.champion?.charAt(0).toUpperCase()}${params.champion?.slice(1)}`;
@@ -24,7 +15,9 @@ export const loader: LoaderFunction = async ({ params }) => {
   }
 
   //TODO: remove this catch is redundant, should .thens and .catches be used together with await?
-  const response = await fetch(`http://localhost:3000/champions/${champion}`);
+  const response = await fetch('ChampionDetailType', {
+    urlParameters: { champion },
+  });
 
   //Might need to util basic error handling
   if (typeof response === 'boolean') {
@@ -33,15 +26,7 @@ export const loader: LoaderFunction = async ({ params }) => {
     });
   }
 
-  const error = response as FetchError;
-
-  if (error.status >= 400) {
-    throw new Response(error.error, {
-      status: error.status,
-    });
-  }
-
-  const championData = response as LoaderData;
+  const championData = response;
 
   return {
     data: championData,
@@ -49,11 +34,11 @@ export const loader: LoaderFunction = async ({ params }) => {
 };
 
 export default function ChampionDetailPage() {
-  const loaderData = useLoaderData<LoaderData>();
+  const loaderData = useLoaderData<ChampionDetail>();
 
   //The champion data we need is under the champion name, which is nested inside a .data attribute ().
   //example: http://ddragon.leagueoflegends.com/cdn/12.5.1/data/en_US/champion/Aatrox.json
-  const championData = loaderData.data;
+  const championData = loaderData;
 
   return (
     <section>

@@ -1,4 +1,4 @@
-export interface Champion {
+export type Champion = {
   id: string;
   key: string;
   name: string;
@@ -6,14 +6,12 @@ export interface Champion {
   blurb: string;
   info: ChampionInfo;
   image: ChampionImage;
-  tags: Array<
-    "Mage" | "Support" | "Fighter" | "Tank" | "Marksman" | "Assassin"
-  >;
+  tags: Array<'Mage' | 'Support' | 'Fighter' | 'Tank' | 'Marksman' | 'Assassin'>;
   partype: string;
   stats: ChampionStats;
-}
+};
 
-export interface ChampionDetail {
+export type ChampionDetail = {
   id: string;
   key: string;
   name: string;
@@ -21,7 +19,6 @@ export interface ChampionDetail {
   blurb: string;
   info: ChampionInfo;
   stats: ChampionStats;
-
   image: ChampionImage;
   skins: ChampionSkin[];
   lore: string;
@@ -32,7 +29,7 @@ export interface ChampionDetail {
   spells: ChampionSpell[];
   passive: ChampionPassive;
   recommended: any[]; //Also seems unused by riot.
-}
+};
 
 type ChampionStats = {
   hp: number;
@@ -81,13 +78,7 @@ type ChampionSkin = {
   chromas: boolean;
 };
 
-export type ChampionTag =
-  | "Mage"
-  | "Support"
-  | "Fighter"
-  | "Tank"
-  | "Marksman"
-  | "Assassin";
+export type ChampionTag = 'Mage' | 'Support' | 'Fighter' | 'Tank' | 'Marksman' | 'Assassin';
 
 export type ChampionSpell = {
   id: string;

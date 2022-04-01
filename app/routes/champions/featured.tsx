@@ -4,7 +4,7 @@ import Container from '../../components/container/container';
 import ClassFilterheader from '../../components/classFilterHeader/classFilterheader';
 import ChampionAvatar from '~/components/championAvatar/championAvatar';
 
-import fetch from '../../utils/fetch';
+import fetch from '../../utils/fetch/fetch';
 
 import type { Champion } from '../../types/champion';
 

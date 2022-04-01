@@ -1,12 +1,12 @@
-import { useLoaderData, LoaderFunction } from "remix";
+import { useLoaderData, LoaderFunction } from 'remix';
 
-import Container from "../../components/container/container";
-import ClassFilterheader from "../../components/classFilterHeader/classFilterheader";
-import ChampionAvatar from "~/components/championAvatar/championAvatar";
+import Container from '../../components/container/container';
+import ClassFilterheader from '../../components/classFilterHeader/classFilterheader';
+import ChampionAvatar from '~/components/championAvatar/championAvatar';
 
-import fetch from "../../utils/fetch";
+import fetch from '../../utils/fetch/fetch';
 
-import type { Champion } from "../../types/champion";
+import type { Champion } from '../../types/champion';
 
 type LoaderData = {
   data: boolean | Array<Champion>;
@@ -16,14 +16,16 @@ export const loader: LoaderFunction = async ({ request }) => {
   // We check if this loader is called with or without a champion class filter.
   // If there is a championclass in the queryProps, that means the user has filtered on a championClass, so we execute a different call.
   const url = new URL(request.url);
-  const champClassFilter = url.searchParams.get("championClass")
-  
-  if(champClassFilter) {
-    const data = await fetch(`http://localhost:3000/champions/type/${champClassFilter}`);
+  const champClassFilter = url.searchParams.get('championClass');
+
+  if (champClassFilter) {
+    const data = await fetch('ChampionClassFilterType', {
+      urlParameters: { filter: champClassFilter },
+    });
     return data;
   }
 
-  const data = await fetch('http://localhost:3000/champions');
+  const data = await fetch('ChampionType', {});
   return data;
 };
 
@@ -35,7 +37,7 @@ export default function Index() {
   return (
     <Container>
       <ClassFilterheader />
-      <div className="grid items-start grid-cols-3 gap-5 py-10 md:grid-cols-5">
+      <div className='grid items-start grid-cols-3 gap-5 py-10 md:grid-cols-5'>
         {champions &&
           champions.map((item: Champion) => {
             return <ChampionAvatar {...item} key={item.key} />;

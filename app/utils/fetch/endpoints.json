@@ -1,0 +1,5 @@
+{
+  "ChampionType": "http://localhost:3000/champions",
+  "ChampionDetailType": "http://localhost:3000/champions",
+  "ChampionClassFilterType": "http://localhost:3000/champions/type"
+}
