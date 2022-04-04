@@ -10,6 +10,7 @@ type LoaderData = {
 type FetchError = {
   error: string;
   status: number;
+  data: any
 };
 
 export default (url: string, body: object | boolean = false, auth: string | boolean = false) => {

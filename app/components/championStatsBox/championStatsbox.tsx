@@ -30,12 +30,13 @@ export default function ChampionStatsbox({stats, info}: Props){
 
   //We extract the keys out of the object, so we can use the reduce function to find the 'highest' value.
   const champStatKeys = Object.keys(comparisonObject) as Array<keyof typeof comparisonObject>;
-  const maxChampStat = champStatKeys.reduce((a, b) => {
-    //To prevent typescript from thinking it could be undefined due to the optional 'difficulty' in the typing, we extract to variables with a fallback.
-    const firstStat = comparisonObject[a] || 0;
-    const secondStat = comparisonObject[b] || 0;
-    return firstStat > secondStat ? a : b
-  });
+  // const maxChampStat = champStatKeys.reduce((a, b) => {
+  //   //To prevent typescript from thinking it could be undefined due to the optional 'difficulty' in the typing, we extract to variables with a fallback.
+  //   const firstStat = comparisonObject[a] || 0;
+  //   const secondStat = comparisonObject[b] || 0;
+  //   return firstStat > secondStat ? a : b
+  // });
+  const maxChampStat = 'magic'
 
   const championIconType = statToIconMap[maxChampStat] as keyof typeof iconTypes
 
