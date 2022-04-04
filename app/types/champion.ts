@@ -74,7 +74,7 @@ export type ChampionInfo = {
   difficulty: number;
 };
 
-type ChampionSkin = {
+export type ChampionSkin = {
   id: string;
   num: string;
   name: string;

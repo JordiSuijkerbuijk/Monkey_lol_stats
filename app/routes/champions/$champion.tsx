@@ -3,6 +3,7 @@ import type { ThrownResponse } from "remix";
 
 import ChampionDetailHeaderSection from "../../sections/headers/championDetail";
 import ChampionIntroductionSection from "../../sections/championIntroductionSection/championIntroductionSection";
+import ChampionSkinSection from "../../sections/championSkinSection/championSkinSection";
 
 import fetch from "../../utils/fetch";
 
@@ -54,6 +55,7 @@ export default function ChampionDetailPage() {
     <section>
       <ChampionDetailHeaderSection {...championData}/>
       <ChampionIntroductionSection lore={championData.lore} champStats={championData.stats} champInfo={championData.info}/>
+      <ChampionSkinSection skins={championData.skins} championId={championData.id} championName={championData.name}/>
     </section>
   );
 }
