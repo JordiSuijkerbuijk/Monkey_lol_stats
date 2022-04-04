@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <>
       <div className='w-full h-[60px]'></div>
-      <nav className='flex bg-background fixed top-0 w-full z-[2]'>
+      <nav className='fixed top-0 z-50 flex w-full bg-background'>
         <span className='absolute text-3xl h-[60px] flex items-center ml-2'>
           <TransitionOutLink to='/' className=''>
             🐒

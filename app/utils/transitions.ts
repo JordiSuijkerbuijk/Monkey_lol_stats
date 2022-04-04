@@ -35,4 +35,11 @@ export function transitionIn() {
     scale: [0.90, 1],
     easing: "linear",
   });
+
+  tl.finished
+  .then( () => {
+    const contenContainer = document.querySelector('#content') as HTMLElement;
+    if(!contenContainer) return;
+    contenContainer.style.transform = 'initial'
+  })
 }
