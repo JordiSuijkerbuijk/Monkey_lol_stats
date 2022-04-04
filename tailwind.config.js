@@ -12,9 +12,6 @@ module.exports = {
       black: "#000000",
       fire: "#F86624",
     },
-    height: {
-      nav: '60px'
-    },
     animationDelay: {
       100: "100ms",
       200: "200ms",
@@ -22,6 +19,9 @@ module.exports = {
       400: "400ms",
     },
     extend: {
+      height: {
+        nav: '60px'
+      },
       translate: {
         '2px': '2px'
       },
