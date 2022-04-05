@@ -76,7 +76,6 @@ export default function ChampionSkinSection({skins, championId, championName}: P
 
   function createAnimationTimeline(){
     if(window.innerWidth <= 1023) return;
-    console.log('hi')
     const tl = anime.timeline({autoplay: false});
 
     for(let i = 1; i < skinsContainerRef.current.children.length; i ++) {
