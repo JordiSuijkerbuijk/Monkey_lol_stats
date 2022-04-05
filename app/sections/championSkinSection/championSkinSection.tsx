@@ -65,7 +65,8 @@ export default function ChampionSkinSection({skins, championId, championName}: P
     }
     else {
       //amount of rems * rem base unit * amount of times gap is applied
-      const mobileSpacing = 2 * 16 * (skins.length - 1);
+      const amountRems = window.innerWidth <= 767 ? 2 : 4;
+      const mobileSpacing = amountRems * 16 * (skins.length - 1);
       sectionHeight = sectionHeight + mobileSpacing;
     }
 
@@ -135,16 +136,21 @@ export default function ChampionSkinSection({skins, championId, championName}: P
 
   return (
     <section className="relative" style={{height: `${sectionHeight}px`}} ref={contentContainer}>
-      <div className={`sticky top-[var(--nav-height)] lg:h-[calc(100vh_-_var(--nav-height))] grid justify-center gap-8 lg:gap-0`} ref={skinsContainerRef}>
+      <div className={`sticky top-[var(--nav-height)] lg:h-[calc(100vh_-_var(--nav-height))] grid gap-8 md:gap-16 lg:gap-0`} ref={skinsContainerRef}>
         {Array.isArray(skins) && skins.map((skin, i) => {
           const imageUrl = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championId}_${skin.num}.jpg`
           return (
-            <div className={`lg:grid lg:items-center lg:col-start-1 lg:row-start-1`} style={{ zIndex: `${i}`}}key={skin.id}>
-              <div className="relative">
-                <Image src={imageUrl} alt={skin.name} isStatic={false} loadingType={"lazy"} width={1215} height={717} />
-                <span className="absolute bottom-0 left-0 px-8 py-4 font-semibold bg-background/80 text-secondary">
-                  {i === 0 ? championName : skin.name}
-                </span>
+            <div className={`relative lg:grid lg:items-center lg:col-start-1 lg:row-start-1`} style={{ zIndex: `${i}`}}key={skin.id}>
+              <div className="absolute top-0 bottom-0 left-0 right-0 hidden h-screen lg:block">
+                <Image src={imageUrl} alt="" isStatic={false} loadingType={"lazy"} width={1215} height={717} imageClass="h-full w-full object-cover blur-md grayscale-[60%]"/>
+              </div>
+              <div className="grid justify-center">
+                <div className="relative">
+                  <Image src={imageUrl} alt={skin.name} isStatic={false} loadingType={"lazy"} width={1215} height={717} />
+                  <span className="absolute bottom-0 left-0 px-8 py-4 font-semibold bg-background/80 text-secondary">
+                    {i === 0 ? championName : skin.name}
+                  </span>
+                </div>
               </div>
             </div>
           )
