@@ -58,11 +58,11 @@ export default function ChampionDetailPage() {
   //example: http://ddragon.leagueoflegends.com/cdn/12.5.1/data/en_US/champion/Aatrox.json
   const championData = loaderData.data;
   return (
-    <section>
+    <>
       <ChampionDetailHeaderSection {...championData}/>
       <ChampionIntroductionSection lore={championData.lore} champStats={championData.stats} champInfo={championData.info}/>
       <ChampionSkinSection skins={championData.skins} championId={championData.id} championName={championData.name}/>
-    </section>
+    </>
   );
 }
 

@@ -135,15 +135,17 @@ export default function ChampionSkinSection({skins, championId, championName}: P
 
   return (
     <section className="relative" style={{height: `${sectionHeight}px`}} ref={contentContainer}>
-      <div className={`sticky top-[var(--nav-height)] grid justify-center gap-8 lg:gap-0`} ref={skinsContainerRef}>
+      <div className={`sticky top-[var(--nav-height)] lg:h-[calc(100vh_-_var(--nav-height))] grid justify-center gap-8 lg:gap-0`} ref={skinsContainerRef}>
         {Array.isArray(skins) && skins.map((skin, i) => {
           const imageUrl = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championId}_${skin.num}.jpg`
           return (
-            <div className={`relative lg:col-start-1 lg:row-start-1`} style={{ zIndex: `${i}`}}key={skin.id}>
-              <Image src={imageUrl} alt={skin.name} isStatic={false} loadingType={"lazy"} width={1215} height={717} />
-              <span className="absolute bottom-0 left-0 px-8 py-4 font-semibold bg-background/80 text-secondary">
-                {i === 0 ? championName : skin.name}
-              </span>
+            <div className={`lg:grid lg:items-center lg:col-start-1 lg:row-start-1`} style={{ zIndex: `${i}`}}key={skin.id}>
+              <div className="relative">
+                <Image src={imageUrl} alt={skin.name} isStatic={false} loadingType={"lazy"} width={1215} height={717} />
+                <span className="absolute bottom-0 left-0 px-8 py-4 font-semibold bg-background/80 text-secondary">
+                  {i === 0 ? championName : skin.name}
+                </span>
+              </div>
             </div>
           )
         })}

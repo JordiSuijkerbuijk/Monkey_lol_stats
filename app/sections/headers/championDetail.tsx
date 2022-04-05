@@ -8,8 +8,8 @@ import type { ChampionDetail } from "../../types/champion";
 
 export default function ChampionDetailHeader(props: ChampionDetail) {
   return (
-    <div>
-      <div className="relative flex justify-center w-full h-full py-12 overflow-hidden -z-10">
+    <section className="-mb-16 lg:-mb-32">
+      <div className="relative flex justify-center w-full py-12 overflow-hidden -z-10">
         {/* We render the image twice, once as a blurred out background and one in 'normal' size */}
         <div className="z-10 flex justify-center">
           <Image
@@ -59,6 +59,6 @@ export default function ChampionDetailHeader(props: ChampionDetail) {
           </div>
         </div>
       </Container>
-    </div>
+    </section>
   );
 }
