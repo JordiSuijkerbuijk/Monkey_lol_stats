@@ -1,24 +1,22 @@
 import Container from '../../components/container/container';
+import ChampionAbilityBox from '../../components/championAbilityBox/championAbilityBox'
 import ChampionStatsBox from '../../components/championStatsBox/championStatsbox';
 
-import { ChampionStats, ChampionInfo } from '../../types/champion';
+import { ChampionStats, ChampionInfo, ChampionPassive, ChampionSpell } from '../../types/champion';
 
 type ChampionIntroductionProps = {
-  lore: string,
   champStats: ChampionStats,
-  champInfo: ChampionInfo
+  champInfo: ChampionInfo,
+  champPassive: ChampionPassive,
+  champAbilities: ChampionSpell[]
 }
 
-export default function ChampionIntroductionSection({lore, champStats, champInfo}: ChampionIntroductionProps){
+export default function ChampionIntroductionSection({champStats, champInfo, champPassive, champAbilities}: ChampionIntroductionProps){
   return (
-    //TODO:
-    // FIX the whitespace coming from the outer container instead of from here.
     <section className="mb-12">
-      <Container containerClass="grid gap-4 items-center sm:grid-cols-2 md:gap-8">
+      <Container containerClass="grid gap-12 justify-center lg:auto-cols-max lg:grid-flow-col lg:gap-24">
+        <ChampionAbilityBox passive={champPassive} abilities={champAbilities}/>
         <ChampionStatsBox stats={champStats} info={champInfo}/>
-        <p>
-          {lore}
-        </p>
       </Container>
     </section>
   )

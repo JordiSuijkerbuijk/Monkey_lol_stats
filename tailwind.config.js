@@ -6,6 +6,7 @@ module.exports = {
     },
     colors: {
       background: "#131416",
+      transparent: "transparent",
       primary: "#ffffff",
       secondary: "#FFA62B",
       tertiary: "#d8d8d8",
@@ -21,6 +22,9 @@ module.exports = {
     extend: {
       height: {
         nav: '60px'
+      },
+      grayscale: {
+        '60': '60%'
       },
       translate: {
         '2px': '2px'

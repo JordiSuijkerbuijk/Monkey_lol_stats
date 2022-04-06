@@ -13,7 +13,7 @@ export default function RevealCircle({ circleClass, isActive }: Props) {
         cx="50"
         cy="50"
         r="50"
-        stroke="#FFA62B"
+        stroke="var(--secondary)"
         strokeWidth="2"
         fill="none"
         strokeDasharray="1 1"

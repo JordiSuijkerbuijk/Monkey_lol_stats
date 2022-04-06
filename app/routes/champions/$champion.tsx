@@ -60,7 +60,7 @@ export default function ChampionDetailPage() {
   return (
     <>
       <ChampionDetailHeaderSection {...championData}/>
-      <ChampionIntroductionSection lore={championData.lore} champStats={championData.stats} champInfo={championData.info}/>
+      <ChampionIntroductionSection champStats={championData.stats} champInfo={championData.info} champPassive={championData.passive} champAbilities={championData.spells} />
       <ChampionSkinSection skins={championData.skins} championId={championData.id} championName={championData.name}/>
     </>
   );

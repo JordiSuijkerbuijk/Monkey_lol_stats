@@ -141,7 +141,7 @@ export default function ChampionSkinSection({skins, championId, championName}: P
           return (
             <div className={`relative lg:grid lg:items-center lg:col-start-1 lg:row-start-1`} style={{ zIndex: `${i}`}}key={skin.id}>
               <div className="absolute top-0 bottom-0 left-0 right-0 hidden h-screen lg:block">
-                <Image src={imageUrl} alt="" isStatic={false} loadingType={"lazy"} width={1215} height={717} imageClass="h-full w-full object-cover blur-md grayscale-[60%]"/>
+                <Image src={imageUrl} alt="" isStatic={false} loadingType={"lazy"} width={1215} height={717} imageClass="h-full w-full object-cover blur-md grayscale-60"/>
               </div>
               <div className="grid justify-center">
                 <div className="relative">
