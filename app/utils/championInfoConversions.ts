@@ -1,31 +1,31 @@
-import { ChampionStats } from '../types/champion';
+import { ChampionStats } from "../types/champion";
 
-export function champStatToIconType(statName: keyof ChampionStats){
+export function champStatToImage(statName: keyof ChampionStats) {
   const mapping = {
-    armor: "shield",
-    armorperlevel: "shieldincrease",
-    attackdamage: "fist",
-    attackdamageperlevel: "fistincrease",
-    attackrange: "target",
-    attackspeed: "axeswing",
-    attackspeedperlevel: "axeswingincrease",
-    crit: "explosion",
-    critperlevel: "explosionincrease",
-    hp: "heart",
-    hpperlevel: "heartincrease",
-    hpregen: "healthpotion",
-    hpregenperlevel: "healthpotionincrease",
-    movespeed: "wingedboot",
-    mp: "raindrop",
-    mpperlevel: "raindropincrease",
-    mpregen: "potionball",
-    mpregenperlevel: "potionballincrease",
-    spellblock: "holyshield",
-    spellblockperlevel: "holyshieldincrease"
-  }
+    armor: "armor",
+    armorperlevel: "armor",
+    attackdamage: "axe",
+    attackdamageperlevel: "axe",
+    attackrange: "attackRange",
+    attackspeed: "attackSpeed",
+    attackspeedperlevel: "attackSpeed",
+    crit: "crit",
+    critperlevel: "crit",
+    hp: "health",
+    hpperlevel: "health",
+    hpregen: "health",
+    hpregenperlevel: "health",
+    movespeed: "moveSpeed",
+    mp: "mana",
+    mpperlevel: "mana",
+    mpregen: "mana",
+    mpregenperlevel: "mana",
+    spellblock: "magicResist",
+    spellblockperlevel: "magicResist",
+  };
 
-  const iconName = mapping[statName] || "shield"
-  return  iconName
+  const iconName = mapping[statName] || "shield";
+  return iconName;
 }
 
 export function champStatToReadableStat(statName: keyof ChampionStats) {
@@ -49,9 +49,9 @@ export function champStatToReadableStat(statName: keyof ChampionStats) {
     mpregen: "Ability resource regeneration",
     mpregenperlevel: "Ability resource regeneration per level",
     spellblock: "Magic resist",
-    spellblockperlevel: "Magic resist per level"
+    spellblockperlevel: "Magic resist per level",
   };
 
   const readableStatname = mapping[statName] || "Unknown stat";
-  return readableStatname
+  return readableStatname;
 }
