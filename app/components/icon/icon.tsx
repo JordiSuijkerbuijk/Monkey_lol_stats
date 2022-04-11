@@ -4,34 +4,35 @@ import Skull from "./types/skull";
 import Handshake from "./types/handshake";
 import Eye from "./types/eye";
 import Ellipsis from "./types/ellipsis";
-import MageIcon from "./types/mageIcon"
+import MageIcon from "./types/mageIcon";
 import AssasinIcon from "./types/assasinIcon";
 import FighterIcon from "./types/fighterIcon";
-import MarksmanIcon from "./types/marksmanIcon"
+import MarksmanIcon from "./types/marksmanIcon";
 import TankIcon from "./types/tankIcon";
-import SupportIcon from './types/supportIcon'
-import Fist from './types/fist'
-import FistIncrease from './types/fistIncrease';
-import Wand from './types/wand'
-import Shield from './types/shield'
-import ShieldIncrease from './types/shieldIncrease'
+import SupportIcon from "./types/supportIcon";
+import Fist from "./types/fist";
+import FistIncrease from "./types/fistIncrease";
+import Wand from "./types/wand";
+import Shield from "./types/shield";
+import ShieldIncrease from "./types/shieldIncrease";
 import SchoolCap from "./types/schoolCap";
 import Heart from "./types/heart";
 import HeartIncrease from "./types/heartIncrease";
-import Target from './types/target'
+import Target from "./types/target";
 import AxeSwing from "./types/axeSwing";
-import AxeSwingIncrease from "./types/axeswingIncrease"
-import Explosion from "./types/explosion"
-import ExplosionIncrease from './types/explosionIncrease'
-import HealthPotion from './types/healthPotion'
-import HealthPotionIncrease from './types/healthPotionIncrease'
-import WingedBoot from './types/wingedBoot'
+import AxeSwingIncrease from "./types/axeswingIncrease";
+import Explosion from "./types/explosion";
+import ExplosionIncrease from "./types/explosionIncrease";
+import HealthPotion from "./types/healthPotion";
+import HealthPotionIncrease from "./types/healthPotionIncrease";
+import WingedBoot from "./types/wingedBoot";
 import Raindrop from "./types/raindrop";
-import RaindropIncrease from "./types/raindropIncrease"
-import PotionBall from './types/potionBall'
+import RaindropIncrease from "./types/raindropIncrease";
+import PotionBall from "./types/potionBall";
 import PotionBallIncrease from "./types/potionBallIncrease";
 import Holyshield from "./types/holyshield";
 import HolyShieldIncrease from "./types/holyshieldIncrease";
+import MagnifyingGlass from "./types/magnifyingGlass";
 
 export const iconTypes = {
   crown: Crown,
@@ -67,13 +68,14 @@ export const iconTypes = {
   potionball: PotionBall,
   potionballincrease: PotionBallIncrease,
   holyshield: Holyshield,
-  holyshieldincrease: HolyShieldIncrease
+  holyshieldincrease: HolyShieldIncrease,
+  magnifyingGlass: MagnifyingGlass,
 };
 
 type IconProps = {
-  type: keyof typeof iconTypes,
-  className?: string
-}
+  type: keyof typeof iconTypes;
+  className?: string;
+};
 
 export default function Icon({ type, ...rest }: IconProps) {
   const IconComp = iconTypes[type];

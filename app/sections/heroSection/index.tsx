@@ -1,6 +1,7 @@
 import Container from "../../components/container/container";
 import Icon from "../../components/icon/icon";
 import Image from "../../components/image/image";
+import Searchbar from "../../components/searchBar/searchBar";
 
 type StatCardProps = {
   iconType: string;
@@ -30,13 +31,18 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="relative overflow-hidden">
-      <h1 className="text-center h-[250px] md:h-[400px] flex justify-center font-bebas">
-        <div className="flex flex-col justify-center uppercase md:w-9/12 leading-20">
-          <span className="mb-4 text-fire whitespace-nowrap">🔥flame🔥</span>{" "}
-          the boys
+    <section className="relative flex flex-col items-center justify-center overflow-hidden h-[250px] md:h-[400px]">
+      <h1 className="flex justify-center w-full mb-4 text-center font-bebas">
+        <div className="flex flex-col justify-center w-11/12 uppercase md:w-9/12 leading-20">
+          <span>
+            <span className="text-fire">🔥flame🔥</span>
+            the boys
+          </span>
         </div>
       </h1>
+      <div className="flex justify-center w-full">
+        <Searchbar />
+      </div>
       <div className="absolute top-0 w-full h-full -z-10">
         <span className="absolute top-0 w-full h-full bg-black opacity-60"></span>
         <Image
