@@ -1,12 +1,12 @@
-import { useLoaderData, LoaderFunction } from "remix";
+import { useLoaderData, LoaderFunction } from 'remix';
 
-import Container from "../../components/container/container";
-import ClassFilterheader from "../../components/classFilterHeader/classFilterheader";
-import ChampionAvatar from "~/components/championAvatar/championAvatar";
+import Container from '../../components/container/container';
+import ClassFilterheader from '../../components/classFilterHeader/classFilterheader';
+import ChampionAvatar from '~/components/championAvatar/championAvatar';
 
-import fetch from "../../utils/fetch";
+import fetch from '../../utils/fetch/fetch';
 
-import type { Champion } from "../../types/champion";
+import type { Champion } from '../../types/champion';
 
 type LoaderData = {
   data: boolean | Array<Champion>;
@@ -25,7 +25,7 @@ export default function Featured() {
   return (
     <Container>
       <ClassFilterheader />
-      <div className="grid items-start grid-cols-3 gap-5 py-10 md:grid-cols-5">
+      <div className='grid items-start grid-cols-3 gap-5 py-10 md:grid-cols-5'>
         {featuredChampions &&
           featuredChampions.map((item: Champion) => {
             return <ChampionAvatar {...item} key={item.key} />;
