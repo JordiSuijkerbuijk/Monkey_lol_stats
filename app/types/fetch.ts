@@ -7,13 +7,16 @@ export type FetchType = {
 
 //Types for all endpoints and their parameters/responseTypes
 export type Types = {
-  ChampionType: { parameters: { body?: object; urlParameters?: object }; reponseType: Champion };
+  ChampionType: {
+    parameters: { body?: object; urlParameters?: { [k: string]: string } };
+    reponseType: Champion;
+  };
   ChampionClassFilterType: {
-    parameters: { body?: object; urlParameters: { filter: string } };
+    parameters: { body?: object; urlParameters: { [k: string]: string } };
     reponseType: Champion;
   };
   ChampionDetailType: {
-    parameters: { body?: object; urlParameters: { champion: string } };
+    parameters: { body?: object; urlParameters: { [k: string]: string } };
     reponseType: ChampionDetail;
   };
 };

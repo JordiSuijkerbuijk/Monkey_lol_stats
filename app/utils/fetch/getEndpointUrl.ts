@@ -7,11 +7,9 @@ export default function getEndpointUrl<T extends keyof Types>(
   type: T,
   params: FetchType[T]['parameters']['urlParameters']
 ): string {
-  //turns params into string so dynamic url parameters can be used
-  const parameters = params as object;
   const paramsToString =
-    parameters &&
-    Object.keys(parameters).map((item: string) => {
+    params &&
+    Object.keys(params).map((item: string) => {
       return `/${params[item]}`;
     });
 
