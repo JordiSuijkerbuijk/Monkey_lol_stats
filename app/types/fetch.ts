@@ -21,4 +21,8 @@ export type Types = {
   };
 };
 
-export type FetchError = {};
+export type FetchError = {
+  status_code: number;
+  message: string;
+  url?: string;
+};

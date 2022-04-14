@@ -34,12 +34,11 @@ export default function Fetch<T extends keyof Types>(
       })
       .then((data) => {
         if (!data.error) {
-          resolve(data);
+          resolve(data.data);
         }
         resolve(false);
       })
       .catch((e) => {
-        console.log(e);
         resolve(false);
       });
   });
