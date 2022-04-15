@@ -1,9 +1,9 @@
-import Scoreboard from '../components/scoreboard/scoreboard';
+import ScoreboardSection from '../sections/scoreboardSection/scoreboardSection';
 
 export default function Live() {
   return (
-    <section className='flex justify-center items-center h-full w-full py-6'>
-      <Scoreboard />
+    <section className='flex items-center justify-center w-full h-full py-6'>
+      <ScoreboardSection />
     </section>
   );
 }

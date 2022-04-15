@@ -53,10 +53,7 @@ export default function App() {
       <body className='relative'>
         <LoadSpinner />
         <Navbar />
-        <div
-          id='content'
-          className='flex justify-center h-[calc(100%_-_60px)] origin-center origin-top'
-        >
+        <div id='content' className='flex justify-center origin-center origin-top'>
           {/* Question: Why is the navbar inside it of the content, should it not be above the content? */}
           <Outlet />
           <ScrollRestoration />

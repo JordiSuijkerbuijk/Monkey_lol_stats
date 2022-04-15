@@ -1,70 +1,31 @@
 import anime from 'animejs';
-import { useEffect, ReactElement } from 'react';
 
-import type { liveGameData } from '../../types/game';
+import Image from '../image/image';
 
-// type Props = liveGameData;
+export type ChampionCardProps = {
+  id: string;
+  name: string;
+  title: string;
+};
 
-// export default function Scoreboard({ game, summoner }: Props) {
-export default function Scoreboard() {
-  useEffect(() => {
-    animationTimeline();
-  }, []);
-
-  const cards = [1, 2, 3, 4, 5];
-
+//Make this into correct type Champion type / game type
+export function ScoreboardCard({ id, name, title }: ChampionCardProps) {
   return (
-    <div className='flex flex-col items-center w-3/4 h-full'>
-      {/* scoreboard needs cards where each players current data is shown */}
-      <div className='flex flex-col w-full space-y-2 overflow-hidden h-1/2'>
-        {/* Scoreboard for team 1*/}
-        {cards.map((item: number) => {
-          const translate = 71 * (cards.length - (item - 1));
-          return (
-            <div
-              className={`flex items-center justify-center bg-black h-1/5`}
-              id='scoreboard-item'
-              style={{ transform: `translateY(${translate}px)` }}
-              key={item}
-            >
-              <ScoreboardCard />
-            </div>
-          );
-        })}
-      </div>
-      {/* divider between scoreboards*/}
-      <div className='relative flex items-center justify-between w-10/12 py-6'>
-        <div className='w-1/2 scale-x-0 bg-secondary h-0.5 rounded-sm origin-right' id='divider' />
-        <div className='px-4 text-3xl opacity-0 text-secondary font-bebas' id='vs'>
-          vs
-        </div>
-        <div className='w-1/2 scale-x-0 bg-secondary h-0.5 rounded-sm origin-left' id='divider' />
-      </div>
-      <div className='flex flex-col w-full space-y-2 overflow-hidden h-1/2'>
-        {/* Scoreboard for team 2*/}
-        {cards.map((item: number) => {
-          const translate = 71 * item;
-          return (
-            <div
-              className={`flex items-center justify-center bg-black h-1/5`}
-              id='scoreboard-item'
-              style={{ transform: `translateY(-${translate}px)` }}
-              key={item}
-            >
-              <ScoreboardCard />
-            </div>
-          );
-        })}
-      </div>
+    <div className='flex w-auto h-full overflow-hidden'>
+      <Image
+        src={`https://ddragon.leagueoflegends.com/cdn/12.5.1/img/champion/${id}.png`}
+        isStatic={false}
+        alt={`Avatar for ${name}`}
+        width={65}
+        height={65}
+        loadingType='lazy'
+        imageClass='flex place-self-center'
+      />
     </div>
   );
 }
 
-function ScoreboardCard() {
-  return <div className=''>test</div>;
-}
-
-function animationTimeline() {
+export function animationTimeline() {
   const tl = anime.timeline();
 
   tl.add({
