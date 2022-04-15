@@ -21,8 +21,6 @@ export const loader: LoaderFunction = async ({ params }) => {
     urlParameters: { champion },
   });
 
-  console.log('response', response);
-
   //Might need to util basic error handling
   if (typeof response === 'boolean') {
     throw new Response('Server error', {
@@ -31,8 +29,6 @@ export const loader: LoaderFunction = async ({ params }) => {
   }
 
   const championData = response;
-
-  console.log('championData', championData);
 
   return championData;
 };
@@ -43,8 +39,6 @@ export default function ChampionDetailPage() {
   //The champion data we need is under the champion name, which is nested inside a .data attribute ().
   //example: http://ddragon.leagueoflegends.com/cdn/12.5.1/data/en_US/champion/Aatrox.json
   const championData = loaderData;
-
-  console.log('championData', championData);
 
   return (
     <>

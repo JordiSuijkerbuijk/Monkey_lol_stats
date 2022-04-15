@@ -8,10 +8,6 @@ import fetch from '../../utils/fetch/fetch';
 
 import type { Champion } from '../../types/champion';
 
-type LoaderData = {
-  data: boolean | Array<Champion>;
-};
-
 export const loader: LoaderFunction = async ({ request }) => {
   // We check if this loader is called with or without a champion class filter.
   // If there is a championclass in the queryProps, that means the user has filtered on a championClass, so we execute a different call.
@@ -30,9 +26,9 @@ export const loader: LoaderFunction = async ({ request }) => {
 };
 
 export default function Index() {
-  const data = useLoaderData<LoaderData>();
+  const data = useLoaderData<boolean | Array<Champion>>();
 
-  const champions = (data.data as Array<Champion>) || false;
+  const champions = (data as Array<Champion>) || false;
 
   return (
     <Container>

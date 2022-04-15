@@ -34,7 +34,7 @@ export default function Fetch<T extends keyof Types>(
       })
       .then((data) => {
         if (!data.error) {
-          resolve(data.data);
+          resolve(data);
         }
         resolve(false);
       })
