@@ -27,6 +27,26 @@ export default function ScoreboardSection() {
 
   return (
     <div className='flex flex-col items-center w-3/4 h-full'>
+      {/* bar for all the labels */}
+      <div className='relative flex w-full mb-2 justify-self-start'>
+        <div className='flex w-full text-3xl text-secondary font-bebas'> 
+          <div className='ml-[12%]'>
+            NAME
+          </div>
+          <div className='ml-[36%]'>
+            KDA
+          </div>
+          <div className='ml-[10%]'>
+            CS
+          </div>
+          <div className='ml-[10%]'>
+            GOLD
+          </div>
+        </div>
+        {/* Slanted block for animation */}
+        <div className='absolute top-0 left-0 w-full h-full bg-black' />
+      </div>
+
       {/* scoreboard needs cards where each players current data is shown */}
       <div className='flex flex-col w-full space-y-2 overflow-hidden h-1/2'>
         {/* Scoreboard for team 1*/}
