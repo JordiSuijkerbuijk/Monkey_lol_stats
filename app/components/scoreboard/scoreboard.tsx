@@ -45,7 +45,14 @@ export function animationTimeline() {
   tl.add({
     targets: '#scoreboard-item',
     translateY: 0,
-    easing: 'cubicBezier(0.79,0.14,0.15,0.86);;',
+    easing: 'cubicBezier(0.79,0.14,0.15,0.86);',
     duration: 500,
+  });
+
+  tl.add({
+    targets: '#slanted-cover',
+    translateX: '100%',
+    easing: 'cubicBezier(0.79,0.14,0.15,0.86);',
+    duration: 900,
   });
 }

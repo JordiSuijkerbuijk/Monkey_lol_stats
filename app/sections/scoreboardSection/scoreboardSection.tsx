@@ -29,26 +29,26 @@ export default function ScoreboardSection() {
     <div className='flex flex-col items-center w-3/4 h-full'>
       {/* bar for all the labels */}
       <div className='relative flex w-full mb-2 justify-self-start'>
-        <div className='flex w-full text-3xl text-secondary font-bebas'> 
-          <div className='ml-[12%]'>
-            NAME
-          </div>
-          <div className='ml-[36%]'>
-            KDA
-          </div>
-          <div className='ml-[10%]'>
-            CS
-          </div>
-          <div className='ml-[10%]'>
-            GOLD
-          </div>
+        <div className='z-20 flex w-full h-10 py-[2px] text-2xl text-primary font-bebas'>
+          <div className='ml-[12%]'>NAME</div>
+          <div className='ml-[44%]'>KDA</div>
+          <div className='ml-[10%]'>CS</div>
+          <div className='ml-[10%]'>GOLD</div>
         </div>
-        {/* Slanted block for animation */}
-        <div className='absolute top-0 left-0 w-full h-full bg-black' />
+        {/* Slanted block that is used as cover for the animation. This block will slide out of the way and reveal a different block */}
+        <div
+          className='absolute w-screen top-[-10px] left-[-60px] z-30 flex justify-center w-full h-[50px]'
+          id='slanted-cover'
+        >
+          <div className='w-[calc(100%-(40px*2))] bg-background before:border-b-[50px] before:border-b-background before:border-l-[50px] before:border-l-transparent before:absolute before:top-0 before:left-0 after:border-t-[50px] after:border-t-background after:border-r-[50px] after:border-r-background after:absolute after:bottom-0 after:right-0' />
+        </div>
+        {/* Backdrop that is displayed behind the labels */}
+        <div className='absolute w-full h-full left-0 bottom-0 bg-black skew-x-[-45deg]' />
+        {/* Border that is overlayed over the Backdrop */}
+        <div className='absolute w-full h-full left-0 bottom-2 border border-secondary skew-x-[-45deg]' />
       </div>
-
       {/* scoreboard needs cards where each players current data is shown */}
-      <div className='flex flex-col w-full space-y-2 overflow-hidden h-1/2'>
+      <div className='z-10 flex flex-col w-full space-y-2 overflow-hidden h-1/2'>
         {/* Scoreboard for team 1*/}
         {/* Add this to the scoreboard component */}
         {cards.map((item: ChampionCardProps, index: number) => {
@@ -73,8 +73,8 @@ export default function ScoreboardSection() {
         </div>
         <div className='w-1/2 scale-x-0 bg-secondary h-0.5 rounded-sm origin-left' id='divider' />
       </div>
+      {/* Scoreboard for team 2*/}
       <div className='flex flex-col w-full space-y-2 overflow-hidden h-1/2'>
-        {/* Scoreboard for team 2*/}
         {cards.map((item: ChampionCardProps, index: number) => {
           const translate = 88 * (index + 1);
           return (
