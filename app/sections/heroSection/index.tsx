@@ -31,7 +31,7 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="relative flex flex-col items-center justify-center overflow-hidden h-[250px] md:h-[400px]">
+    <section className="relative flex flex-col items-center justify-center overflow-hidden h-[250px] md:h-[400px] md:gap-6">
       <h1 className="flex justify-center w-full mb-4 text-center font-bebas">
         <div className="flex flex-col justify-center w-11/12 uppercase md:w-9/12 leading-20">
           <span>
@@ -41,7 +41,7 @@ export default function HeroSection() {
         </div>
       </h1>
       <div className="flex justify-center w-full">
-        <Searchbar />
+        <Searchbar/>
       </div>
       <div className="absolute top-0 w-full h-full -z-10">
         <span className="absolute top-0 w-full h-full bg-black opacity-60"></span>
