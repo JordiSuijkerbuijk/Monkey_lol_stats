@@ -18,22 +18,23 @@ export default function ScoreboardSection() {
   }, []);
 
   const cards = [
-    { id: 'Aatrox', name: 'Aatrox', title: '' },
-    { id: 'Aatrox', name: 'Aatrox', title: '' },
-    { id: 'Aatrox', name: 'Aatrox', title: '' },
-    { id: 'Aatrox', name: 'Aatrox', title: '' },
-    { id: 'Aatrox', name: 'Aatrox', title: '' },
+    { id: 'Aatrox', name: 'Zolderraam', kda: '10/2/6', cs: '140', gold: '11234' },
+    { id: 'Lux', name: 'Tyadan', kda: '12/4/15', cs: '162', gold: '12434' },
+    { id: 'Viego', name: 'Stoned5life', kda: '0/20/6', cs: '99', gold: '17734' },
+    { id: 'Tristana', name: 'Keizercusco', kda: '2/7/1', cs: '110', gold: '9234' },
+    { id: 'Braum', name: 'NFTsAreNotCool', kda: '1/33/7', cs: '1337', gold: '2234' },
   ];
 
   return (
     <div className='flex flex-col items-center w-3/4 h-full'>
       {/* bar for all the labels */}
       <div className='relative flex w-full mb-2 justify-self-start'>
-        <div className='z-20 flex w-full h-10 py-[2px] text-2xl text-primary font-bebas'>
-          <div className='ml-[12%]'>NAME</div>
-          <div className='ml-[44%]'>KDA</div>
-          <div className='ml-[10%]'>CS</div>
-          <div className='ml-[10%]'>GOLD</div>
+        <div className='z-20 grid-cols-5 flex w-full h-10 py-[2px] text-xl text-primary font-bebas'>
+          <div className='w-1/12 ml-2' />
+          <div className='w-6/12 ml-4'>NAME</div>
+          <div className='w-2/12'>KDA</div>
+          <div className='w-2/12'>CS</div>
+          <div className='w-2/12 mr-2'>GOLD</div>
         </div>
         {/* Slanted block that is used as cover for the animation. This block will slide out of the way and reveal a different block */}
         <div
